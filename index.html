@@ -36,6 +36,45 @@
     border-radius: 10px !important;
   }
 }
+.menu-btn{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  background:#0b5b8a;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:8px;
+}
+
+@media (max-width:768px){
+  .main-nav{
+    display:none;
+    flex-direction:column;
+    gap:12px;
+    margin-top:15px;
+    background:rgba(0,0,0,0.7);
+    padding:15px;
+    border-radius:12px;
+  }
+
+  .main-nav a{
+    color:#fff !important;
+    font-size:16px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .top{
+    flex-wrap:wrap;
+  }
+}
+
+.main-nav.show{
+  display:flex;
+}
+
     header{background:#fff;border-bottom:1px solid #eee}
     .container{max-width:1100px;margin:0 auto;padding:18px}
     .top{display:flex;align-items:center;justify-content:space-between}
@@ -81,6 +120,8 @@ backdrop-filter: blur(4px);
 </div>
 </div>
 <nav>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<nav class="main-nav">
 <a href="#home">الرئيسية</a>
 <a href="#services">الخدمات</a>
 <a href="#research-section">الأبحاث والدراسات القانونية</a>
@@ -187,5 +228,11 @@ backdrop-filter: blur(4px);
 </iframe>
 </div>
 </section>
-</main></body>
+</main>
+<script>
+function toggleMenu(){
+  document.querySelector('.main-nav').classList.toggle('show');
+}
+</script>
+</body>
 </html>
